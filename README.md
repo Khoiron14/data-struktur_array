@@ -13,14 +13,14 @@ tipe_data nama_array[jumlah_elemen]. Jika ingin mendeklarasikan sebuah array den
 Dalam menampilkan isi suatu variabel array atau object,biasanya menggunakan fungsi print_r() dan fungsi var_dump().Jika menggunakan fungsi print_r() akan tampak lebih rapi.
 * Contoh :
 ```php
-$angka = array(1,2,3,4,5,6,7,8,9,10);
+$angka = [1,2,3,4,5,6,7,8,9,10];
 print_r($angka); //Versi singkat
 echo "<br /><br />";
 echo "<pre>".print_r($angka, true)."</pre>";
 ```
 * Contoh menggunakan var_dump() :
 ```php
-$a = array(1, 2, array("a", "b", "c"));
+$a = [1, 2, ["a", "b", "c"]];
 var_dump($a);
 ```
 
@@ -28,8 +28,6 @@ var_dump($a);
 
 Array pada PHP dideklarasikan dengan cara:
 ```php
-$nama = array();
-atau
 $nama = [];
 ```
 * Contoh : 
@@ -44,7 +42,7 @@ echo "<pre>".print_r($nama, true)."</pre>";
 * Contoh Array yang sudah diisi :
 
 ```php
-$pelajaran = array("Matematika","Kimia","Fisika","Biologi");
+$pelajaran = ["Matematika","Kimia","Fisika","Biologi"];
 $nilai = [100, 80, 75, 78];
 for ($i=0; $i<=3; $i++) {
     echo "$i. Pelajaran $pelajaran[$i] nilainya $nilai[$i]<br />";
@@ -54,7 +52,7 @@ for ($i=0; $i<=3; $i++) {
 
 Array string memiliki indeks berupa string. Pendeklarasian array string caranya sama dengan deklarasi array numerik: 
 ```php
-$namas = array(); atau $angkas = [];
+$angka = [];
 ```
 Sedangkan untuk menginisialisasi atau langsung mengisi array string, 
 caranya:
@@ -123,7 +121,7 @@ $nama = ["Dono","Doni","Dina","Wati"];
 Cara inisialisasi diatas membuat variabel $nama menjadi array berindeks numerik, dimana indexnya dimulai dengan angka 0.
 Jika kita ingin membuat sebuah variabel array berindex associatif, maka indexnya harus berupa label seperti contoh dibawah ini :
 ```php
-$nama = array("Dono"=>"08126767","Doni"=>"08116762","Dina"=>"08524545","Wati"=>"08571234");
+$nama = ["Dono"=>"08126767","Doni"=>"08116762","Dina"=>"08524545","Wati"=>"08571234"];
 ```
 
 2. Mengakses elemen array index numerik
@@ -142,7 +140,7 @@ $nama = ["Dono","Doni","Dina","Wati"];
 Jika seandainya ingin mencetak keseluruhan nilai dalam array, menghitung panjang array terlebih dahulu dengan keyword count(), dan dengan bantuan looping bisa mencetaknya satu persatu.
 seperti contoh dibawah ini :
 ```php
-$nama = array("Dono","Doni","Dina","Wati");
+$nama = ["Dono","Doni","Dina","Wati"];
 
 for($i=0;$i<count($nama);$i++) {
     echo "Index ke $i adalah $nama[$i]";
@@ -155,7 +153,7 @@ for($i=0;$i<count($nama);$i++) {
 Untuk mengakses elemen array index associatif, langsung menggunakan nama labelnya sepreti contoh dibawah ini :
 
 ```php
-$nama = array("Dono"=>"0123","Doni"=>"1234","Dina"=>"2345","Wati"=>"3456");
+$nama = ["Dono"=>"0123","Doni"=>"1234","Dina"=>"2345","Wati"=>"3456"];
 
     echo $nama["Dono"]."<br>";
     echo $nama["Doni"]."<br>";
@@ -164,7 +162,7 @@ $nama = array("Dono"=>"0123","Doni"=>"1234","Dina"=>"2345","Wati"=>"3456");
 ``` 
 Jika seandainya kita ingin mencetak keseluruhan nilai pada array associatif kita dapat menggunakan keyword list dan each seperti contoh dibawah ini :
 ```php
-$nama = array("Dono"=>"0123","Doni"=>"1234","Dina"=>"2345","Wati"=>"3456");
+$nama = ["Dono"=>"0123","Doni"=>"1234","Dina"=>"2345","Wati"=>"3456"];
 
 while(list($index, $nilai)=each($nama)) {
     echo "Index ke $index berisi $nilai";
